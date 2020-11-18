@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Homepage",
+        "id": "homepageim",
+        "url": "https://homepage.im",
+        "github": "",
+        "description": "A simple customizable homepage that stores users' data and changes in real time!",
+        "src": 1
+    },
+    {
+        "title": "Steen's Beans",
+        "id": "steensbeans",
+        "url": "https://zen-dubinsky-45d9de.netlify.app/",
+        "github": "",
+        "description": "A mock coffee shop that lists coffees, employees, and allows users to order and have the receipt emailed to them!",
+        "src": 2
+    }
+]
