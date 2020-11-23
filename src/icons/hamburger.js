@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import useMenu from '../utils/useMenu';
 
 const HamburgerStyles = styled.div`
-    --box-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
     margin: 0;
     padding: 0;
     box-sizing: border-box;

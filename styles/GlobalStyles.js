@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import bg from '../assets/images/yeshi-kangrang-Qq7A85iCzhQ-unsplash.jpg'
 
 const GlobalStyles = createGlobalStyle`
     :root {
@@ -6,18 +7,25 @@ const GlobalStyles = createGlobalStyle`
         --grey: #efefef;
         --white: #fff;
         --glow: #fff6a9;
+        --box-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
     }
 
     body {
         height: 100vh;
-        background: #222;
-        background-image: repeating-linear-gradient(
-            to bottom,
-            transparent 7px,
-            rgba(0, 0, 0, 0.8) 9px,
-            rgba(0, 0, 0, 0.8) 13px,
-            transparent 13px
-        )
+        background: #111;
+        background-image: url(${bg});
+        background-size: cover;
+        background-position: fixed;
+        p {
+            color: var(--white);
+        }
+    }
+
+    #___gatsby {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .gatsby-image-wrapper img[src*=base64\\,] {
