@@ -4,8 +4,7 @@ import Typography from '../../styles/Typography';
 import 'normalize.css';
 import Menu from '../components/Menu'
 import Footer from "./Footer";
-import Socials from "./Socials";
-
+import styled from "styled-components";
 
 const Layout = ({ children }) => {
   return (
@@ -14,8 +13,6 @@ const Layout = ({ children }) => {
       <Typography />
       <Menu />
       <main>{children}</main>
-      {/* TODO: ADD SOCIALS COMPONENT */}
-      {/* <Socials /> */}
       <Footer />
     </>
   )

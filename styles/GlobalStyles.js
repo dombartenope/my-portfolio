@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
         --white: #fff;
         --glow: #fff6a9;
         --box-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+        --text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
     }
 
     body {
@@ -15,7 +16,6 @@ const GlobalStyles = createGlobalStyle`
         background: #111;
         background-image: url(${bg});
         background-size: cover;
-        background-position: fixed;
         p {
             color: var(--white);
         }

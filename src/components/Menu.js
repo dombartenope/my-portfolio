@@ -5,15 +5,25 @@ import Hamburger from '../icons/hamburger';
 import useMenu from '../utils/useMenu';
 
 const MenuStyles = styled.nav`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
     color: var(--white);
+    .logo {
+        order:0;
+        grid-column: 1 / -1;
+        transform: none;
+        gap: 0;
+        margin-bottom: -2rem;
+    }
     ul {
-        margin: 0;
+        margin: auto;
         padding: 0;
         display: grid;
         gap: 3rem;
-        grid-template-columns: 1fr 1fr auto 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         list-style: none;
-        align-items: center;
     }
     li {
         order: 1;
@@ -24,18 +34,19 @@ const MenuStyles = styled.nav`
         display: block;
         text-decoration: none;
     }
-    @media (max-width: 510px) {
-        --columns: 4;
+    @media (max-width: 640px) {
+        gap: 1rem;
+        --columns: 2;
         ul {
             grid-template-rows: auto auto;
-            grid-template-columns: repeate(var(--columns), 1fr);
+            grid-template-columns: repeat(var(--columns), 1fr);
             justify-items: center;
         }
         .logo {
             order: 0;
             grid-column: 1 / -1;
             transform: none;
-            margin-bottom: -2rem;
+            margin-bottom: -4rem;
         }
     }
 `;
@@ -49,6 +60,9 @@ const Menu = () => {
     return (
         <MenuStyles>
             <ul>
+                <li className="logo">
+                    <Hamburger />
+                </li>
                 {/* Pull menu state in from global state to hide/show menu items */}
                 {menuOpen ? (
                     <>
@@ -60,9 +74,6 @@ const Menu = () => {
                         </li>
                     </>
                 ) : ''}
-                <li className="logo">
-                    <Hamburger />
-                </li>
                 {menuOpen ? (
                     <>
                         <li>

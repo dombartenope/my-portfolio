@@ -7,14 +7,14 @@ export const Image = ({ src }) => {
     query {
       project1: file(relativePath: { eq: "homepage.png" }) {
         childImageSharp {
-          fluid(maxWidth: 700) {
+          fluid(maxWidth: 800, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       project2: file(relativePath: { eq: "steensbeans.png" }) {
         childImageSharp {
-          fluid(maxWidth: 700) {
+          fluid(maxWidth: 800, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }

@@ -39,7 +39,6 @@ const HamburgerStyles = styled.div`
         height: 6px;
         background: var(--glow);
         border-radius: 5px;
-        /* box-shadow: 0 2px 5px rgba(255, 101, 47, .2); */
         transition: all .5s ease-in-out;
         box-shadow: var(--box-shadow);
         

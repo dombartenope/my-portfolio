@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import TextLoop from 'react-text-loop';
-import { BsArrowUpLeft as Icon } from 'react-icons/bs';
 
 const HomePageStyles = styled.div`
   display: flex;
@@ -14,7 +13,7 @@ const HomePageStyles = styled.div`
     padding: 5px;
     text-align: center;
     color: var(--glow);
-    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    text-shadow: var(--text-shadow);
     animation: blink 10s linear infinite;
     @media (max-width: 510px) {
       font-size: 2rem;
@@ -30,7 +29,7 @@ const ContentStyles = styled.div`
   .mark, .arrow {
     display: inline;
     color: var(--glow);
-    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    text-shadow: var(--text-shadow);
   }
   .content {
     padding: 2rem;
@@ -39,10 +38,28 @@ const ContentStyles = styled.div`
     content: '↖';
 
   }
-  @media (max-width: 510px) {
+  @media (max-width: 1856px) and (min-width: 1496px) {
     .arrow:before {
       content: '↑'
     }
+  }
+  @media (max-width: 1390px) and (min-width: 1080px) {
+    .arrow:before {
+      content: '↑'
+    }
+  }
+  @media (max-width: 938px) and (min-width: 762px) {
+    .arrow:before {
+      content: '↑'
+    }
+  }
+  @media (max-width: 743px) {
+    .arrow:before {
+      content: '↑'
+    }
+  }
+  @media (min-width: 1500px) {
+    width: 60%
   }
 `;
 

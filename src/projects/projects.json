@@ -4,15 +4,43 @@
         "id": "homepageim",
         "url": "https://homepage.im",
         "github": "",
-        "description": "A simple customizable homepage that stores users' data and changes in real time!",
-        "src": 1
+        "description": "I wanted a homepage for my PC that had everything I needed at a single glance, so I made one! I love the idea of customizable experiences for users, and tried to showcase that here. Make sure to click around and see everything this site has to offer!",
+        "src": 1,
+        "tech": [
+            "svelte",
+            "css",
+            "javascript",
+            "html"
+        ],
+        "features": [
+            "Click to change between F° and C°",
+            "Clock changes between digital and analog",
+            "Switches from todo list to shopping list",
+            "Gets weather for current location",
+            "Input bar at the top sets a focus for the day",
+            "All settings are saved in local storage"
+        ]
     },
     {
         "title": "Steen's Beans",
         "id": "steensbeans",
         "url": "https://zen-dubinsky-45d9de.netlify.app/",
         "github": "",
-        "description": "A mock coffee shop that lists coffees, employees, and allows users to order and have the receipt emailed to them!",
-        "src": 2
+        "description": "Gatsby is a new found love of mine. So much so that, this entire site is built and dynamically created using it! That in combination with a headless CMS and GraphQL, easily made Steen's Beans my favorite project to work on yet!",
+        "src": 2,
+        "tech": [
+            "graphql",
+            "react",
+            "gatsby",
+            "css",
+            "html"
+        ],
+        "features": [
+            "Universal layout that can be adapted to fit many needs",
+            "Pages are created dynamically for each coffee and roaster",
+            "Orders are calculated and emailed to the user",
+            "Backend data can be updated in real time",
+            "Data stored on backend CMS and displayed using GraphQL"
+        ]
     }
 ]
