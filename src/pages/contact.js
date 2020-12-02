@@ -72,7 +72,13 @@ const contact = () => {
             <div className="container">
                 <p>Feel free to inquire about anything here, or just say hi!</p>
                 <h2>Your Info</h2>
-                <form name="Contact Form" method="POST" data-netlify="true">
+                <form
+                    name="Contact Form"
+                    action="/thanks"
+                    method="POST"
+                    data-netlify="true"
+                    netlify-honeypot="bot-field"
+                >
                     <input type="hidden" name="form-name" value="Contact Form" />
                     <div className="inputBlock">
                         <label htmlFor="email">Email </label>
