@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Dom Bartenope's Portfolio",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Dom Bartenope <dominickbartenope@yahoo.com>",
   "dependencies": {
     "dotenv": "^8.2.0",
     "framer-motion": "^2.9.4",
@@ -17,6 +17,8 @@
     "gatsby-source-filesystem": "^2.4.2",
     "gatsby-transformer-sharp": "^2.6.0",
     "isomorphic-fetch": "^3.0.0",
+    "netlify-cli": "^2.69.1",
+    "netlify-lambda": "^2.0.1",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -40,11 +42,12 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "netlify": "netlify dev"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/dombartenope/my-portfolio"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"

@@ -4,7 +4,6 @@ import Typography from '../../styles/Typography';
 import 'normalize.css';
 import Menu from '../components/Menu'
 import Footer from "./Footer";
-import styled from "styled-components";
 
 const Layout = ({ children }) => {
   return (
