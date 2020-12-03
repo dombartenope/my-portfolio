@@ -31,7 +31,7 @@ const thanks = () => {
     return (
         <>
             <ThanksStyles>
-                <h1 className="title">Contact Me!</h1>
+                <h1>Contact Me!</h1>
                 <h2>Thanks, I'll get back to you ASAP!</h2>
                 <div className="back">
                     <Link to={`/`}>
