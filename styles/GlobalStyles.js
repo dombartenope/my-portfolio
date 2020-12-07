@@ -16,9 +16,7 @@ const GlobalStyles = createGlobalStyle`
         background: #111;
         background-image: url(${bg});
         background-size: cover;
-        p {
-            color: var(--white);
-        }
+        color: var(--white);
     }
 
     #___gatsby {

@@ -44,6 +44,7 @@ const ContactStyles = styled.div`
             justify-content: center;
             align-items: center;
             .inputBlock {
+                margin-bottom: 2rem;
                 width: 100%;
             }
             input, textarea {
