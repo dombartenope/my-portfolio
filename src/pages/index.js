@@ -16,7 +16,9 @@ const HomePageStyles = styled.div`
     text-shadow: var(--text-shadow);
     animation: blink 10s linear infinite;
     @media (max-width: 510px) {
-      font-size: 2rem;
+      font-size: 4rem;
+      line-height: calc(5px + 10vh);
+      margin-top: 3rem;
   }
 }
 `;

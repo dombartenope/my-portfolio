@@ -6,6 +6,7 @@
         "github": "",
         "description": "I wanted a homepage for my PC that had everything I needed at a single glance, so I made one! I love the idea of customizable experiences for users, and tried to showcase that here. Make sure to click around and see everything this site has to offer!",
         "src": 1,
+        "mobile": 3,
         "tech": [
             "svelte",
             "css",
@@ -28,6 +29,7 @@
         "github": "",
         "description": "Gatsby is a new found love of mine. So much so that, this entire site is built and dynamically created using it! That in combination with a headless CMS and GraphQL, easily made Steen's Beans my favorite project to work on yet!",
         "src": 2,
+        "mobile": 4,
         "tech": [
             "graphql",
             "react",

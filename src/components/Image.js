@@ -19,16 +19,36 @@ export const Image = ({ src }) => {
           }
         }
       }
+      project1mobile: file(relativePath: { eq: "homepageMobile.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 800, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      project2mobile: file(relativePath: { eq: "steensbeansMobile.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 800, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
   return (
     <>
-      {src === 1 ? (
-        <Img fluid={data.project1.childImageSharp.fluid} />
-      ) : (
+      {
+        src === 1 ? (
+          <Img fluid={data.project1.childImageSharp.fluid} />
+        ) : src === 2 ? (
           <Img fluid={data.project2.childImageSharp.fluid} />
-        )}
+        ) : src === 3 ? (
+          <Img fluid={data.project1mobile.childImageSharp.fluid} />
+        ) : (
+                <Img fluid={data.project2mobile.childImageSharp.fluid} />
+              )
+      }
     </>
   )
 }

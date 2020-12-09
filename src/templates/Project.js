@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Image } from '../components/Image'
+import { Image } from '../components/Image';
 
 
 const SingleProjectStyles = styled.div`
@@ -121,12 +121,26 @@ const SingleProjectStyles = styled.div`
 
 const Project = ({ pageContext }) => {
     const project = pageContext;
+    const [isDesktop, setIsDesktop] = useState();
+
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            if (window.innerWidth <= 640) {
+                setIsDesktop(false);
+                console.log(isDesktop);
+            } else {
+                setIsDesktop(true);
+                console.log(isDesktop);
+            };
+        })
+    }, []);
+
     return (
         <>
             <SingleProjectStyles>
                 <div className="top">
                     <a href={project.url}><h1 className="main-headline">{project.title}</h1>
-                        <Image src={project.src} />
+                        <Image src={isDesktop ? project.src : project.mobile} />
                     </a>
                     <p>(Check It Out)<span className="clickMe"></span></p>
                 </div>
