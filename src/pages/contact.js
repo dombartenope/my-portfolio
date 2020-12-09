@@ -67,6 +67,7 @@ const ContactStyles = styled.div`
 `;
 
 const contact = () => {
+
     return (
         <ContactStyles>
             <h1>Contact Me!</h1>

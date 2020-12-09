@@ -61,7 +61,7 @@ const about = () => {
             <h1>About Me</h1>
             <div className="container">
                 <h2>
-                    Hey my name is Dom, and I love <span>programming!</span>
+                    Hey my name is Dom, and
                 </h2>
                 <h2>Here are some of my other favorite things:</h2>
                 <div className="grid1">
