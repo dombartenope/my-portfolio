@@ -122,16 +122,21 @@ const SingleProjectStyles = styled.div`
 const Project = ({ pageContext }) => {
     const project = pageContext;
 
-    const [isDesktop, setIsDesktop] = useState(true);
+    const [isDesktop, setIsDesktop] = useState();
 
     useEffect(() => {
+        if (window.innerWidth <= 825) {
+            setIsDesktop(false);
+        } else {
+            setIsDesktop(true);
+        }
         window.addEventListener('resize', () => {
-            if (window.innerWidth <= 640) {
-                setIsDesktop(false);
-            } else {
+            if (window.innerWidth >= 825) {
                 setIsDesktop(true);
+            } else {
+                setIsDesktop(false);
             };
-        }, [isDesktop])
+        })
     });
 
     return (
