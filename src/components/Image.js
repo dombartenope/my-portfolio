@@ -33,6 +33,13 @@ export const Image = ({ src }) => {
           }
         }
       }
+      pup: file(relativePath: { eq: "pup.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 800, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -45,9 +52,11 @@ export const Image = ({ src }) => {
           <Img fluid={data.project2.childImageSharp.fluid} />
         ) : src === 3 ? (
           <Img fluid={data.project1mobile.childImageSharp.fluid} />
+        ) : src === 4 ? (
+          <Img fluid={data.project2mobile.childImageSharp.fluid} />
         ) : (
-                <Img fluid={data.project2mobile.childImageSharp.fluid} />
-              )
+                  <Img fluid={data.pup.childImageSharp.fluid} />
+                )
       }
     </>
   )

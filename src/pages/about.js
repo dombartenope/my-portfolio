@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Image } from '../components/Image';
 
 const AboutStyles = styled.div`
     margin: auto;
@@ -17,33 +18,28 @@ const AboutStyles = styled.div`
         border-radius: 10px;
         background: rgba(0, 0, 0, 0.6);
         padding: 1rem;
+        line-height: calc(5px + 3vw);
         h2 {
             text-align: center;
             padding: 1.5rem;
+            margin-bottom: 2rem;
         }
-        span {
-            position: relative;
+        small {
+            font-size: 10px;
+        }
+        .name {
             color: var(--glow);
             text-shadow: var(--text-shadow);
         }
-        span:hover {
-            cursor: default;
+        .half {
+            font-weight: bold;
         }
-        span:before {
-            color: black;
-            text-shadow: none;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 5px;
-            position: absolute;
-            left: -3.5rem;
-            top: 2rem;
-        }
-        span:hover:before {
-            content: '⬉ (mostly)';
+        .gatsby-image-wrapper {
+            border-radius: 3px;
         }
         .grid1 {
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1.5fr 1.5fr;
             gap: 1rem;
             align-items: center;
         }
@@ -52,31 +48,47 @@ const AboutStyles = styled.div`
             grid-template-columns: 2fr 1fr;
             align-items: center;
         }
+        @media (max-width: 640px) {
+            .grid1 {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
     }
 `;
 
 const about = () => {
+    const dob = '20190707';
+    const year = Number(dob.substr(0, 4));
+    const month = Number(dob.substr(4, 2)) - 1;
+    const day = Number(dob.substr(6, 2));
+    const today = new Date();
+    console.log(today.getDate())
+    let age = today.getFullYear() - year;
+    let half = ''
+    if (today.getMonth() < month || (today.getMonth() === month && today.getDate() < day)) {
+        age--;
+    }
+    if ((today.getMonth() - month) > 6) {
+        half = '½'
+    }
+
     return (
         <AboutStyles>
             <h1>About Me</h1>
             <div className="container">
                 <h2>
-                    Hey my name is Dom, and
+                    Hi I'm <span className="name">Dom</span> and I don't just love programming...
                 </h2>
-                <h2>Here are some of my other favorite things:</h2>
                 <div className="grid1">
-                    <img src='https://images.unsplash.com/photo-1605401430429-1be9523a39d0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80' alt="pic" width="450px" height="300px" />
-                    <h3>I love car. It go drive and beep. I use car for the fuck in back seat.</h3>
-                </div>
-                <div className="grid2">
-                    <h3>This my wife. She young and cute. I met her online.</h3>
-                    <img src="https://images.unsplash.com/photo-1605425971671-aed55e6f4660?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80" alt="My wife" width="450px" height="300px" />
+                    <Image src={5} />
+                    <h3>Meet Vandal, he is {age} <span className="half">{half}</span> {age === 1 && !half ? 'year' : 'years'} old. The story goes: I wasn't going to get a dog, but my roommates brought me to meet one they were looking at for themselves. The breeder handed me this 3 week old puppy, and I knew I was holding my future best friend. <small>(Click to see Vandal's first day home with me)</small></h3>
                 </div>
             </div>
         </AboutStyles>
     )
-}
+};
 
-export default about
+export default about;
 
 // Keeping up to date with emerging technologies

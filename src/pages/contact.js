@@ -14,6 +14,12 @@ const ContactStyles = styled.div`
         font-size: 3rem;
     }
     .container {
+        width: 60%;
+        max-width: 80%;
+        margin-top: 3rem;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 2rem;
         p {
             text-align: center;
 
@@ -32,12 +38,6 @@ const ContactStyles = styled.div`
             top: 5px;
             animation: blink 10s linear infinite;
         }
-        width: 50%;
-        max-width: 80%;
-        margin-top: 3rem;
-        border-radius: 10px;
-        background: rgba(0, 0, 0, 0.6);
-        padding: 2rem;
         form {
             display: flex;
             flex-direction: column;
@@ -63,6 +63,9 @@ const ContactStyles = styled.div`
                 margin-top: 1rem;
             }
         }
+    @media (max-width: 800px) {
+        width: 80%;
+    }
     }
 `;
 

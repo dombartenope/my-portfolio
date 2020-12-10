@@ -125,13 +125,13 @@ const Project = ({ pageContext }) => {
     const [isDesktop, setIsDesktop] = useState();
 
     useEffect(() => {
-        if (window.innerWidth <= 825) {
+        if (window.innerWidth <= 640) {
             setIsDesktop(false);
         } else {
             setIsDesktop(true);
         }
         window.addEventListener('resize', () => {
-            if (window.innerWidth >= 825) {
+            if (window.innerWidth >= 640) {
                 setIsDesktop(true);
             } else {
                 setIsDesktop(false);
