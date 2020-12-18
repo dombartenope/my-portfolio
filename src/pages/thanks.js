@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 
 const ThanksStyles = styled.div`
@@ -27,12 +27,12 @@ const ThanksStyles = styled.div`
     }
 `;
 
-const thanks = () => {
+const Thanks = () => {
     return (
         <>
             <ThanksStyles>
                 <h1>Contact Me!</h1>
-                <h2>Thanks, I'll get back to you ASAP!</h2>
+                <h2>Thanks! I'll get back to you ASAP</h2>
                 <div className="back">
                     <Link to={`/`}>
                         <span className="backButton">Back</span>
@@ -43,4 +43,4 @@ const thanks = () => {
     )
 };
 
-export default thanks;
+export default Thanks;

@@ -12,10 +12,11 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        height: 100vh;
+        height: 100%;
         background: #111;
         background-image: url(${bg});
         background-size: cover;
+        background-repeat: no-repeat;
         color: var(--white);
     }
 

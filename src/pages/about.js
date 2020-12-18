@@ -58,6 +58,7 @@ const AboutStyles = styled.div`
 `;
 
 const about = () => {
+    //Calculating Vandal's birthday
     const dob = '20190707';
     const year = Number(dob.substr(0, 4));
     const month = Number(dob.substr(4, 2)) - 1;

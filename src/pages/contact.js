@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+
 
 const ContactStyles = styled.div`
     display: flex;
@@ -54,6 +55,9 @@ const ContactStyles = styled.div`
                 color: var(--white);
                 border-radius: 5px;
             }
+            .err {
+                cursor: not-allowed;
+            }
             button {
                 background: rgba(0, 0, 0, 0.7);
                 color: var(--glow);
@@ -61,6 +65,7 @@ const ContactStyles = styled.div`
                 cursor: pointer;
                 width: 50%;
                 margin-top: 1rem;
+                position: relative;
             }
         }
     @media (max-width: 800px) {
@@ -69,7 +74,9 @@ const ContactStyles = styled.div`
     }
 `;
 
-const contact = () => {
+const Contact = () => {
+    const [localName, setLocalName] = useState('');
+    const [localEmail, setLocalEmail] = useState('');
 
     return (
         <ContactStyles>
@@ -87,21 +94,41 @@ const contact = () => {
                     <input type="hidden" name="form-name" value="Contact Form" />
                     <div className="inputBlock">
                         <label htmlFor="email">Email </label>
-                        <input type="email" name="email" />
+                        <input
+                            type="email"
+                            name="email"
+                            value={localEmail}
+                            onChange={e => setLocalEmail(e.target.value)}
+                        />
 
                         <label htmlFor="name">Name </label>
-                        <input type="text" name="name" />
+                        <input
+                            type="text"
+                            name="name"
+                            value={localName}
+                            onChange={e => setLocalName(e.target.value)}
+                        />
                     </div>
 
                     <label htmlFor="message">Message</label>
-                    <textarea name="message" cols="30" rows="10"></textarea>
+                    <textarea
+                        name="message"
+                        cols="30"
+                        rows="10"
+                    ></textarea>
 
-                    <button type="submit">Send</button>
+                    <button
+                        type="submit"
+                        disabled={!localName || !localEmail}
+                        className={!localName || !localEmail ? 'err' : ''}
+                    >
+                        {!localName || !localEmail ? 'Please Enter Your Info' : 'Send'}
+                    </button>
 
                 </form>
             </div>
-        </ContactStyles>
+        </ContactStyles >
     )
 };
 
-export default contact;
+export default Contact;
