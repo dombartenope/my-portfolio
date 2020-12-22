@@ -84,7 +84,7 @@ const index = () => {
             </TextLoop>
           </h2>
 
-          <h2 className="content">Recent bootcamp grad here to showcase my projects and introduce my self to the world of programming! Feel free to check out my work (and my pup) in the menu above <span className="arrow"></span> Thanks for stopping by! </h2>
+          <h2 className="content">Recent bootcamp grad, here to showcase my projects and introduce my self to the world of programming! Feel free to check out my work (and my pup) in the menu above <span className="arrow"></span> Thanks for stopping by! </h2>
         </ContentStyles>
       </HomePageStyles>
     </>

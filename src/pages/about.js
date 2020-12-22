@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Image } from '../components/Image';
 
@@ -36,20 +36,25 @@ const AboutStyles = styled.div`
         }
         .gatsby-image-wrapper {
             border-radius: 3px;
+            max-height: 400px;
+            max-width: 
         }
         .grid1 {
             display: grid;
             grid-template-columns: 1.5fr 1.5fr;
             gap: 1rem;
             align-items: center;
+            padding: 5px;
         }
         .grid2 {
             display: grid;
             grid-template-columns: 2fr 1fr;
+            gap: 1rem;
             align-items: center;
+            padding: 5px;
         }
         @media (max-width: 640px) {
-            .grid1 {
+            .grid1, .grid2 {
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
@@ -57,14 +62,13 @@ const AboutStyles = styled.div`
     }
 `;
 
-const about = () => {
+const About = () => {
     //Calculating Vandal's birthday
     const dob = '20190707';
     const year = Number(dob.substr(0, 4));
     const month = Number(dob.substr(4, 2)) - 1;
     const day = Number(dob.substr(6, 2));
     const today = new Date();
-    console.log(today.getDate())
     let age = today.getFullYear() - year;
     let half = ''
     if (today.getMonth() < month || (today.getMonth() === month && today.getDate() < day)) {
@@ -73,6 +77,23 @@ const about = () => {
     if ((today.getMonth() - month) > 6) {
         half = '½'
     }
+
+    const [isDesktop, setIsDesktop] = useState();
+
+    useEffect(() => {
+        if (window.innerWidth <= 640) {
+            setIsDesktop(false);
+        } else {
+            setIsDesktop(true);
+        }
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 640) {
+                setIsDesktop(true);
+            } else {
+                setIsDesktop(false);
+            };
+        })
+    });
 
     return (
         <AboutStyles>
@@ -85,11 +106,16 @@ const about = () => {
                     <Image src={5} />
                     <h3>Meet Vandal, he is {age} <span className="half">{half}</span> {age === 1 && !half ? 'year' : 'years'} old. The story goes: I wasn't going to get a dog, but my roommates brought me to meet one they were looking at for themselves. The breeder handed me this 3 week old puppy, and I knew I was holding my future best friend. <small>(Click to see Vandal's first day home with me)</small></h3>
                 </div>
+                <div className="grid2">
+                    {!isDesktop && <Image src={6} />}
+                    <h3>When it comes to hiking, love is a strong word. On just about every hike, I almost immediately regret it five minutes in. Once I get my stride though, you can't beat the views and the fresh air. It also helps that Vandal gets super excited and pulls me up the mountain.</h3>
+                    {isDesktop && <Image src={6} />}
+                </div>
             </div>
-        </AboutStyles>
+        </AboutStyles >
     )
 };
 
-export default about;
+export default About;
 
 // Keeping up to date with emerging technologies

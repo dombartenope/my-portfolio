@@ -40,6 +40,13 @@ export const Image = ({ src }) => {
           }
         }
       }
+      hiking: file(relativePath: { eq: "hiking.JPG" }) {
+        childImageSharp {
+          fluid(maxWidth: 800, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -54,9 +61,11 @@ export const Image = ({ src }) => {
           <Img fluid={data.project1mobile.childImageSharp.fluid} />
         ) : src === 4 ? (
           <Img fluid={data.project2mobile.childImageSharp.fluid} />
+        ) : src === 5 ? (
+          <Img fluid={data.pup.childImageSharp.fluid} />
         ) : (
-                  <Img fluid={data.pup.childImageSharp.fluid} />
-                )
+                    <Img fluid={data.hiking.childImageSharp.fluid} />
+                  )
       }
     </>
   )
