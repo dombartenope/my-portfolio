@@ -47,6 +47,20 @@ export const Image = ({ src }) => {
           }
         }
       }
+      cooking: file(relativePath: { eq: "cooking.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 800, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      baking: file(relativePath: { eq: "badBaking.JPG" }) {
+        childImageSharp {
+          fluid(maxWidth: 800, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -63,9 +77,13 @@ export const Image = ({ src }) => {
           <Img fluid={data.project2mobile.childImageSharp.fluid} />
         ) : src === 5 ? (
           <Img fluid={data.pup.childImageSharp.fluid} />
+        ) : src === 6 ? (
+          <Img fluid={data.hiking.childImageSharp.fluid} />
+        ) : src === 7 ? (
+          <Img fluid={data.cooking.childImageSharp.fluid} />
         ) : (
-                    <Img fluid={data.hiking.childImageSharp.fluid} />
-                  )
+                        <Img fluid={data.baking.childImageSharp.fluid} />
+                      )
       }
     </>
   )

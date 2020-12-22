@@ -27,9 +27,12 @@ const AboutStyles = styled.div`
         small {
             font-size: 10px;
         }
-        .name {
+        .name, .baker {
             color: var(--glow);
             text-shadow: var(--text-shadow);
+        }
+        .baker {
+            cursor: pointer;
         }
         .half {
             font-weight: bold;
@@ -79,6 +82,7 @@ const About = () => {
     }
 
     const [isDesktop, setIsDesktop] = useState();
+    const [isBadBaker, setIsBadBaker] = useState(false);
 
     useEffect(() => {
         if (window.innerWidth <= 640) {
@@ -108,8 +112,12 @@ const About = () => {
                 </div>
                 <div className="grid2">
                     {!isDesktop && <Image src={6} />}
-                    <h3>When it comes to hiking, love is a strong word. On just about every hike, I almost immediately regret it five minutes in. Once I get my stride though, you can't beat the views and the fresh air. It also helps that Vandal gets super excited and pulls me up the mountain.</h3>
+                    <h3>When it comes to hiking, love is a strong word. On just about every hike, I almost immediately regret it five minutes in. Once I get my stride though, you can't beat the views and the fresh air. It also helps that Vandal gets super excited and pulls me up the mountains.</h3>
                     {isDesktop && <Image src={6} />}
+                </div>
+                <div className="grid1">
+                    <Image src={isBadBaker ? 7 : 8} />
+                    <h3>This time last year, I couldn't boil water correctly to make pasta. In fear of getting disowned by my italian family of amazing cooks, I tried making something every possible day. I found a new love for cooking, and only burn stuff 20% of the time. Just don't ask me to bake anything yet, I've still got a lot of learning to do... <small>(Click <span className="baker" onClick={() => setIsBadBaker(!isBadBaker)}>here</span> to see how that went)</small></h3>
                 </div>
             </div>
         </AboutStyles >
