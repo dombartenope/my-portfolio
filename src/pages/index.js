@@ -34,28 +34,29 @@ const ContentStyles = styled.div`
     text-shadow: var(--text-shadow);
   }
   .content {
-    padding: 2rem;
+    margin-top: 2rem;
+    padding: 0;
   }
   .arrow:before {
     content: '↖';
 
   }
-  @media (max-width: 1856px) and (min-width: 1496px) {
+  @media (max-width: 1763px) and (min-width: 1500px) {
     .arrow:before {
       content: '↑'
     }
   }
-  @media (max-width: 1390px) and (min-width: 1080px) {
+  @media (max-width: 1320px) and (min-width: 1017px) {
     .arrow:before {
       content: '↑'
     }
   }
-  @media (max-width: 938px) and (min-width: 762px) {
+  @media (max-width: 866px) and (min-width: 762px) {
     .arrow:before {
       content: '↑'
     }
   }
-  @media (max-width: 743px) {
+  @media (max-width: 672px) {
     .arrow:before {
       content: '↑'
     }
@@ -84,7 +85,7 @@ const index = () => {
             </TextLoop>
           </h2>
 
-          <h2 className="content">Recent bootcamp grad, here to showcase my projects and introduce my self to the world of programming! Feel free to check out my work (and my pup) in the menu above <span className="arrow"></span> Thanks for stopping by! </h2>
+          <h2 className="content">Recent bootcamp grad, here to showcase my projects and all of the emerging technologies I test my hand in! Feel free to check out my work (and my pup) in the menu above <span className="arrow"></span> Thanks for stopping by! </h2>
         </ContentStyles>
       </HomePageStyles>
     </>

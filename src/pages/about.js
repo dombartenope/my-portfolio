@@ -10,7 +10,7 @@ const AboutStyles = styled.div`
         font-size: 3rem;
         color: var(--glow);
         text-shadow: var(--text-shadow);
-        margin-bottom: 1rem;
+        margin-bottom: 3rem;
     }
     .container {
         margin: auto;
@@ -39,8 +39,7 @@ const AboutStyles = styled.div`
         }
         .gatsby-image-wrapper {
             border-radius: 3px;
-            max-height: 400px;
-            max-width: 
+            max-height: 675px;
         }
         .grid1 {
             display: grid;
@@ -108,7 +107,7 @@ const About = () => {
                 </h2>
                 <div className="grid1">
                     <Image src={5} />
-                    <h3>Meet Vandal, he is {age} <span className="half">{half}</span> {age === 1 && !half ? 'year' : 'years'} old. The story goes: I wasn't going to get a dog, but my roommates brought me to meet one they were looking at for themselves. The breeder handed me this 3 week old puppy, and I knew I was holding my future best friend. <small>(Click to see Vandal's first day home with me)</small></h3>
+                    <h3>Meet Vandal, he is {age} <span className="half">{half}</span> {age === 1 && !half ? 'year' : 'years'} old. The story goes: I wasn't going to get a dog, but my roommates brought me to meet one they were looking at for themselves. The breeder handed me this 3 week old puppy, and I knew I was holding my future best friend.</h3>
                 </div>
                 <div className="grid2">
                     {!isDesktop && <Image src={6} />}
@@ -116,8 +115,8 @@ const About = () => {
                     {isDesktop && <Image src={6} />}
                 </div>
                 <div className="grid1">
-                    <Image src={isBadBaker ? 7 : 8} />
-                    <h3>This time last year, I couldn't boil water correctly to make pasta. In fear of getting disowned by my italian family of amazing cooks, I tried making something every possible day. I found a new love for cooking, and only burn stuff 20% of the time. Just don't ask me to bake anything yet, I've still got a lot of learning to do... <small>(Click <span className="baker" onClick={() => setIsBadBaker(!isBadBaker)}>here</span> to see how that went)</small></h3>
+                    <Image src={!isBadBaker ? 7 : 8} />
+                    <h3>This time last year, I couldn't boil water correctly to make pasta. In fear of getting disowned by my italian family of amazing cooks, I tried making something new every day. Doing so, I found a love for cooking, and only burn stuff 20% of the time. Just don't ask me to bake anything yet, I've still got a lot of learning to do... <small>(Click <span className="baker" onClick={() => setIsBadBaker(!isBadBaker)}>here</span> to see how that went)</small></h3>
                 </div>
             </div>
         </AboutStyles >

@@ -15,7 +15,7 @@ const ContactStyles = styled.div`
         font-size: 3rem;
     }
     .container {
-        width: 60%;
+        width: 80%;
         max-width: 80%;
         margin-top: 3rem;
         border-radius: 10px;
@@ -46,7 +46,7 @@ const ContactStyles = styled.div`
             align-items: center;
             .inputBlock {
                 margin-bottom: 2rem;
-                width: 100%;
+                width: 100%
             }
             input, textarea {
                 display: block;
@@ -71,7 +71,7 @@ const ContactStyles = styled.div`
     @media (max-width: 800px) {
         width: 80%;
     }
-    }
+}
 `;
 
 const Contact = () => {
