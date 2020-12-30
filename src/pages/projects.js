@@ -3,6 +3,7 @@ import React from 'react'
 import p from '../projects/projects.json'
 import { Image } from '../components/Image';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const ProjectsStyles = styled.div`
     display: grid;
@@ -47,17 +48,19 @@ const ProjectListStyles = styled.div`
 
 const projects = () => {
     return (
-        <ProjectsStyles>
-            {p.map(project => (
-                <ProjectList
-                    key={project.id}
-                    id={project.id}
-                    title={project.title}
-                    src={project.src}
-                    technology={project.tech}
-                />
-            ))}
-        </ProjectsStyles>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <ProjectsStyles>
+                {p.map(project => (
+                    <ProjectList
+                        key={project.id}
+                        id={project.id}
+                        title={project.title}
+                        src={project.src}
+                        technology={project.tech}
+                    />
+                ))}
+            </ProjectsStyles>
+        </motion.div>
     )
 }
 

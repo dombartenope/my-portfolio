@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
+const variants = {
+    initial: { opacity: 0, x: -1000 },
+    animate: {
+        opacity: 1, x: 0, transition: {
+            delay: 0.5
+        }
+    },
+    exit: { opacity: 0 }
+}
 
 const ContactStyles = styled.div`
     display: flex;
@@ -80,7 +90,12 @@ const Contact = () => {
 
     return (
         <ContactStyles>
-            <h1>Contact Me!</h1>
+            <motion.h1
+                variants={variants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+            >Contact Me!</motion.h1>
             <div className="container">
                 <p>Feel free to inquire about anything here, or just say hi!</p>
                 <h2>Your Info</h2>

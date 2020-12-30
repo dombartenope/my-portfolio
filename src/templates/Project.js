@@ -2,8 +2,21 @@ import { Link } from 'gatsby';
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Image } from '../components/Image';
+import { motion } from 'framer-motion';
 
+//Framer motion variants
+const variants = {
+    initial: { y: -100 },
+    animate: { y: 0 },
+    exit: { opacity: 0 },
+}
 
+const h1Variants = {
+    initial: { scale: 0 },
+    animate: { scale: 1, transition: { delay: 0.5 } },
+    exit: { opacity: 0 }
+}
+//
 const SingleProjectStyles = styled.div`
     color: var(--white);
     margin-top: 1rem;
@@ -140,10 +153,22 @@ const Project = ({ pageContext }) => {
     });
 
     return (
-        <>
+        <motion.div
+            variants={variants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+        >
             <SingleProjectStyles>
                 <div className="top">
-                    <a href={project.url}><h1 className="main-headline">{project.title}</h1>
+                    <a href={project.url}>
+                        <motion.h1
+                            className="main-headline"
+                            variants={h1Variants}
+                            initial="initial"
+                            animate="animate"
+                            exit="exit"
+                        >{project.title}</motion.h1>
                         <Image src={isDesktop ? project.src : project.mobile} />
                     </a>
                     <p>(Check It Out)<span className="clickMe"></span></p>
@@ -174,7 +199,7 @@ const Project = ({ pageContext }) => {
                 </div>
 
             </SingleProjectStyles>
-        </>
+        </motion.div>
     )
 }
 

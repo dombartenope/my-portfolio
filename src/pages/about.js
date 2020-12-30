@@ -1,6 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Image } from '../components/Image';
+import { motion } from 'framer-motion';
+
+const variants = {
+    initial: { opacity: 0, x: 1000 },
+    animate: {
+        opacity: 1, x: 0, transition: {
+            delay: 0.5
+        }
+    },
+    exit: { opacity: 0 }
+}
 
 const AboutStyles = styled.div`
     margin: auto;
@@ -99,12 +110,18 @@ const About = () => {
     });
 
     return (
+
         <AboutStyles>
-            <h1>About Me</h1>
+            <motion.h1
+                variants={variants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+            >About Me</motion.h1>
             <div className="container">
                 <h2>
                     Hi I'm <span className="name">Dom</span> and I don't just love programming...
-                </h2>
+                    </h2>
                 <div className="grid1">
                     <Image src={5} />
                     <h3>Meet Vandal, he is {age} <span className="half">{half}</span> {age === 1 && !half ? 'year' : 'years'} old. The story goes: I wasn't going to get a dog, but my roommates brought me to meet one they were looking at for themselves. The breeder handed me this 3 week old puppy, and I knew I was holding my future best friend.</h3>
@@ -120,6 +137,7 @@ const About = () => {
                 </div>
             </div>
         </AboutStyles >
+
     )
 };
 

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Hamburger from '../icons/hamburger';
 import useMenu from '../utils/useMenu';
+import { AnimatePresence } from 'framer-motion';
 
 const MenuStyles = styled.nav`
     display: flex;
@@ -59,33 +60,35 @@ const Menu = () => {
 
     return (
         <MenuStyles>
-            <ul>
-                <li className="logo">
-                    <Hamburger />
-                </li>
-                {/* Pull menu state in from global state to hide/show menu items */}
-                {menuOpen ? (
-                    <>
-                        <li>
-                            <Link to={`/`}>Home</Link>
-                        </li>
-                        <li>
-                            <Link to={`/projects`}>Projects</Link>
-                        </li>
-                    </>
-                ) : ''}
-                {menuOpen ? (
-                    <>
-                        <li>
-                            <Link to={`/contact`}>Contact Me</Link>
-                        </li>
-                        <li>
-                            <Link to={`/about`}>About Me</Link>
-                        </li>
-                    </>
-                ) : ""}
+            <AnimatePresence exitBeforeEnter>
+                <ul>
+                    <li className="logo">
+                        <Hamburger />
+                    </li>
+                    {/* Pull menu state in from global state to hide/show menu items */}
+                    {menuOpen ? (
+                        <>
+                            <li>
+                                <Link to={`/`}>Home</Link>
+                            </li>
+                            <li>
+                                <Link to={`/projects`}>Projects</Link>
+                            </li>
+                        </>
+                    ) : ''}
+                    {menuOpen ? (
+                        <>
+                            <li>
+                                <Link to={`/contact`}>Contact Me</Link>
+                            </li>
+                            <li>
+                                <Link to={`/about`}>About Me</Link>
+                            </li>
+                        </>
+                    ) : ""}
 
-            </ul>
+                </ul>
+            </AnimatePresence>
         </MenuStyles >
     )
 }
