@@ -4,6 +4,7 @@ import p from '../projects/projects.json'
 import { Image } from '../components/Image';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 
 const ProjectsStyles = styled.div`
     display: grid;
@@ -73,6 +74,7 @@ const ProjectList =
     }) => {
         return (
             <ProjectListStyles>
+                <SEO title={"Projects"} />
                 <div className="inner">
                     <div className="header">
                         <Link to={`/projects/${id}`}>

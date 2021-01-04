@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Image } from '../components/Image';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 
 //Framer motion variants
 const variants = {
@@ -159,6 +160,7 @@ const Project = ({ pageContext }) => {
             animate="animate"
             exit="exit"
         >
+            <SEO title={project.title} />
             <SingleProjectStyles>
                 <div className="top">
                     <a href={project.url}>

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import TextLoop from 'react-text-loop';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 
 const variants = {
   initial: { opacity: 0, y: -100 },
@@ -93,6 +94,7 @@ const index = () => {
       animate="animate"
       exit="exit"
     >
+      <SEO title={"Home"} />
       <HomePageStyles>
         <motion.h1
           className="title"

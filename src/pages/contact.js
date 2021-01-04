@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 
 const variants = {
     initial: { opacity: 0, x: -1000 },
@@ -90,6 +91,7 @@ const Contact = () => {
 
     return (
         <ContactStyles>
+            <SEO title={"Contact Me"} />
             <motion.h1
                 variants={variants}
                 initial="initial"

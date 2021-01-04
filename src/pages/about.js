@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Image } from '../components/Image';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 
 const variants = {
     initial: { opacity: 0, x: 1000 },
@@ -31,9 +32,15 @@ const AboutStyles = styled.div`
         padding: 1rem;
         line-height: calc(5px + 3vw);
         h2 {
+            margin: auto;
             text-align: center;
-            padding: 1.5rem;
+            padding: 1rem;
             margin-bottom: 2rem;
+            max-width: 70%;
+            @media (max-width: 640px) {
+                max-width: 100%;
+                line-height: 1.5rem;
+            }
         }
         small {
             font-size: 10px;
@@ -110,8 +117,8 @@ const About = () => {
     });
 
     return (
-
         <AboutStyles>
+            <SEO title={"About Me"} />
             <motion.h1
                 variants={variants}
                 initial="initial"
@@ -119,25 +126,21 @@ const About = () => {
                 exit="exit"
             >About Me</motion.h1>
             <div className="container">
-                <h2>
-                    Hi I'm <span className="name">Dom</span> and I don't just love programming...
-                    </h2>
+                <h2 className="intro">
+                    Hi I'm <span className="name">Dom</span> and I love web development. I was introduced to Python in 2017, and became obsessed. Then I found javascript through a 6 month bootcamp. After graduating, I have spent every day learning something new and testing the limits of what I can do with this amazing language. I love little optimizations and problem solving, and I can't wait to utilize my skills professionally!
+                </h2>
+                <h1>But wait theres more...</h1>
                 <div className="grid1">
                     <Image src={5} />
-                    <h3>Meet Vandal, he is {age} <span className="half">{half}</span> {age === 1 && !half ? 'year' : 'years'} old. The story goes: I wasn't going to get a dog, but my roommates brought me to meet one they were looking at for themselves. The breeder handed me this 3 week old puppy, and I knew I was holding my future best friend.</h3>
+                    <h3>Meet Vandal, he is {age} <span className="half">{half}</span> {age === 1 && !half ? 'year' : 'years'} old. I wasn't going to get a dog, but my roommates brought me to meet one they were looking at for themselves. The breeder handed me this 3 week old puppy, and I knew I was holding my future best friend.</h3>
                 </div>
                 <div className="grid2">
                     {!isDesktop && <Image src={6} />}
-                    <h3>When it comes to hiking, love is a strong word. On just about every hike, I almost immediately regret it five minutes in. Once I get my stride though, you can't beat the views and the fresh air. It also helps that Vandal gets super excited and pulls me up the mountains.</h3>
+                    <h3>Love is a strong word when it comes to hiking. On just about every hike, I almost immediately regret it five minutes in. Once I get my stride though, you can't beat the views and the fresh air. It also helps that Vandal gets super excited and pulls me up the mountains.</h3>
                     {isDesktop && <Image src={6} />}
-                </div>
-                <div className="grid1">
-                    <Image src={!isBadBaker ? 7 : 8} />
-                    <h3>This time last year, I couldn't boil water correctly to make pasta. In fear of getting disowned by my italian family of amazing cooks, I tried making something new every day. Doing so, I found a love for cooking, and only burn stuff 20% of the time. Just don't ask me to bake anything yet, I've still got a lot of learning to do... <small>(Click <span className="baker" onClick={() => setIsBadBaker(!isBadBaker)}>here</span> to see how that went)</small></h3>
                 </div>
             </div>
         </AboutStyles >
-
     )
 };
 

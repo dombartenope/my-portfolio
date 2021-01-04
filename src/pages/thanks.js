@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 
 const variants = {
     initial: { x: -1000, opacity: 0 },
@@ -37,6 +38,7 @@ const ThanksStyles = styled.div`
 const Thanks = () => {
     return (
         <>
+            <SEO title={"Thanks!"} />
             <ThanksStyles>
                 <h1>Contact Me!</h1>
                 <motion.h2
