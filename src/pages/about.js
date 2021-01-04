@@ -99,7 +99,7 @@ const About = () => {
     }
 
     const [isDesktop, setIsDesktop] = useState();
-    const [isBadBaker, setIsBadBaker] = useState(false);
+
 
     useEffect(() => {
         if (window.innerWidth <= 640) {
