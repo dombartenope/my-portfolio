@@ -127,7 +127,7 @@ const About = () => {
             >About Me</motion.h1>
             <div className="container">
                 <h2 className="intro">
-                    Hi I'm <span className="name">Dom</span> and I love web development. I was introduced to Python in 2017, and became obsessed. Then I found javascript through a 6 month bootcamp. After graduating, I have spent every day learning something new and testing the limits of what I can do with this amazing language. I love little optimizations and problem solving, and I can't wait to utilize my skills professionally!
+                    Hi I'm <span className="name">Dom</span> and I love web development. I was introduced to programming in 2018, and became obsessed. I really wanted to deep dive into Javascript and frameworks, so I went through a 6 month bootcamp. After graduating, I have spent every day learning something new and testing the limits of what I can do with this amazing language. I love little optimizations and problem solving, and I can't wait to utilize my skills professionally!
                 </h2>
                 <h1>But wait theres more...</h1>
                 <div className="grid1">
