@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import TextLoop from 'react-text-loop';
-import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 
 const variants = {
@@ -88,21 +87,10 @@ const ContentStyles = styled.div`
 
 const index = () => {
   return (
-    <motion.div
-      variants={variants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-    >
+    <div>
       <SEO title={"Home"} />
       <HomePageStyles>
-        <motion.h1
-          className="title"
-          variants={h1Variants}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-        >Dom Bartenope</motion.h1>
+        <h1>Dom Bartenope</h1>
         <ContentStyles>
           <h2>New Jersey based web developer with a love for all things<span> </span>
             {/* Scrolling Text */}
@@ -120,7 +108,7 @@ const index = () => {
           <h2 className="content">Recent bootcamp grad, here to showcase my projects and all of the emerging technologies I test my hand in! Feel free to check out my work (and my pup) in the menu above <span className="arrow"></span> Thanks for stopping by! </h2>
         </ContentStyles>
       </HomePageStyles>
-    </motion.div>
+    </div>
   )
 }
 
