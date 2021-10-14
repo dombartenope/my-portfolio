@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 
 const variants = {
@@ -92,12 +91,7 @@ const Contact = () => {
     return (
         <ContactStyles>
             <SEO title={"Contact Me"} />
-            <motion.h1
-                variants={variants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-            >Contact Me!</motion.h1>
+            <h1>Contact Me!</h1>
             <div className="container">
                 <p>Feel free to inquire about anything here, or just say hi!</p>
                 <h2>Your Info</h2>
