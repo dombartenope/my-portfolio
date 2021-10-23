@@ -21,7 +21,7 @@ export const Image = ({ src }) => {
       }
       project3: file(relativePath: { eq: "api1.png" }) {
         childImageSharp {
-          fluid(maxWidth: 1000, quality: 100) {
+          fluid(maxWidth: 800, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -61,7 +61,7 @@ export const Image = ({ src }) => {
           }
         }
       }
-      baking: file(relativePath: { eq: "badBaking.JPG" }) {
+      apimobile: file(relativePath: { eq: "apimobile.png" }) {
         childImageSharp {
           fluid(maxWidth: 800, quality: 100) {
             ...GatsbyImageSharpFluid
@@ -91,7 +91,7 @@ export const Image = ({ src }) => {
         ) : src === 8 ? (
           <Img fluid={data.project3.childImageSharp.fluid} />
         ) : (
-          <Img fluid={data.baking.childImageSharp.fluid} />
+          <Img fluid={data.apimobile.childImageSharp.fluid} />
         )
       }
     </>
