@@ -18,6 +18,7 @@
             "Clock changes between digital and analog",
             "Switches from todo list to shopping list",
             "Gets weather for current location",
+            "Makes calls to an proxy api server to avoid displaying public facing api keys",
             "Input bar at the top sets a focus for the day",
             "All settings are saved in local storage"
         ]
@@ -43,6 +44,25 @@
             "Orders are calculated and emailed to the user",
             "Backend data can be updated in real time",
             "Data stored on backend CMS and displayed using GraphQL"
+        ]
+    },
+    {
+        "title": "Api Proxy Server",
+        "id": "apiproxyserver",
+        "url": "https://github.com/dombartenope/api-proxy-server",
+        "github": "",
+        "description": "There was always one thing that bugged me about my \"homepage\" app, the fact that the api key could not be hidden in an env when requesting data. The reason behind this is because the appid goes directly into the url parameters. I recently discovered a work around by creating a proxy server to funnel the request through and it has successfully made the request secure and secret!",
+        "src": 8,
+        "tech": [
+            "nodejs",
+            "javascript",
+            "express"
+        ],
+        "features": [
+            "Reusable api proxy server to keep pesky unhidden variables from the public eye",
+            "Rate limiting to avoid going over api limits",
+            "Handles sensitive information for the request while allowing, query params on the frontend",
+            "Keeps the response cached for 2 minutes"
         ]
     }
 ]

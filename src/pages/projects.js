@@ -14,6 +14,9 @@ const ProjectsStyles = styled.div`
     padding: 2rem;
     text-align: center;
     width: 80vw;
+    .logo {
+        padding: 0 .5rem;
+    }
     h1 {
         color: var(--glow);
         font-size: 3rem;
